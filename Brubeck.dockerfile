@@ -14,6 +14,7 @@ RUN apt-get install -y make
 RUN mkdir /build
 RUN cd /build && git clone https://github.com/github/brubeck.git
 WORKDIR /build/brubeck
+RUN git checkout 5d139a44206813640151cf0af17d32ee9ac41a60
 RUN ./script/bootstrap
 
 COPY configs/brubeck.json /etc/brubeck.json
