@@ -1,5 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Gregory Eremin <g@erem.in>
+LABEL app="go-carbon"
+LABEL version="0.7.2"
+LABEL github="https://github.com/lomik/go-carbon"
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y make git golang
@@ -13,4 +16,5 @@ RUN make submodules && make
 COPY configs/carbon.toml /etc/carbon.toml
 COPY configs/storage-schemas.conf /etc/storage-schemas.conf
 RUN mkdir -p /data/graphite/whisper
+EXPOSE 2003 2004 7002
 ENTRYPOINT ./go-carbon -config=/etc/carbon.toml
