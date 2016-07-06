@@ -1,6 +1,6 @@
 graphite:
-	docker build -t localhots/carbon:v1 -f Dockerfile-carbon .
-	docker build -t localhots/brubeck:v1 -f Dockerfile-brubeck .
+	docker build -t localhots/carbon:v1 -f Carbon.dockerfile .
+	docker build -t localhots/brubeck:v1 -f Brubeck.dockerfile .
 	docker run -d --name carbon \
 		-p 2003:2003 \
 		-p 2004:2004 \
