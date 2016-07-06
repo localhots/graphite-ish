@@ -11,3 +11,9 @@ graphite:
 		-p 8126:8126 \
 		-p 9126:9126 \
 		localhots/brubeck:v1
+
+fast:
+	# LOL
+	@echo "Graphite is fast now!"
+
+again:
