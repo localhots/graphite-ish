@@ -1,0 +1,16 @@
+FROM ubuntu:14.04
+MAINTAINER Gregory Eremin <g@erem.in>
+
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get install -y make git golang
+
+RUN mkdir /build
+RUN cd /build && git clone https://github.com/lomik/go-carbon.git
+WORKDIR /build/go-carbon
+RUN git checkout v0.7.2
+RUN make submodules && make
+
+COPY configs/carbon.toml /etc/carbon.toml
+COPY configs/storage-schemas.conf /etc/storage-schemas.conf
+RUN mkdir -p /data/graphite/whisper
+ENTRYPOINT ./go-carbon -config=/etc/carbon.toml
