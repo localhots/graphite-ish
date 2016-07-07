@@ -4,13 +4,13 @@
     "dumpfile": "./brubeck.dump",
     "capacity": 15,
     "expire": 20,
-    "http": ":8080",
+    "http": ":8090",
     "backends": [
         {
             "type": "carbon",
-            "address": "localhost",
+            "address": "carbon",
             "port": 2003,
-            "frequency": 10
+            "frequency": 5
         }
     ],
     "samplers": [
@@ -19,7 +19,7 @@
             "address": "0.0.0.0",
             "port": 8126,
             "workers": 4,
-            "multisock": true,
+            "multisock": false,
             "multimsg": 8
         },
         {

@@ -14,6 +14,9 @@ WORKDIR /build/go-carbon
 RUN git checkout v0.7.2
 RUN make submodules && make
 
+RUN mkdir /graphite-config
+COPY configs/graphite-api.yml /graphite-config/graphite-api.yml
+
 COPY configs/carbon.toml /etc/carbon.toml
 COPY configs/storage-schemas.conf /etc/storage-schemas.conf
 EXPOSE 2003 2004 7002

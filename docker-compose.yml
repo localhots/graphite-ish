@@ -1,5 +1,7 @@
 version: '2'
 services:
+  # Go Carbon (Carbon replacement)
+  # Takes care of writing metrics to database and data retention
   carbon:
     image: carbon:v1
     build:
@@ -11,6 +13,9 @@ services:
       - '7002:7002'
     volumes:
       - /data/graphite/whisper
+      - /graphite-config
+  # Brubeck (StatsD replacement)
+  # Aggregates metrics before sending them to Carbon
   brubeck:
     image: brubeck:v1
     build:
@@ -22,6 +27,24 @@ services:
       - '9126:9126'
     depends_on:
       - carbon
+  # Graphite API (yep, almost original Graphite Web)
+  # Provides API for reading metrics
+  graphite-api:
+    image: brutasse/graphite-api:latest
+    build:
+      context: https://github.com/brutasse/graphite-api.git
+    environment:
+      BIND_ADDRESS: 0.0.0.0
+      PORT: 8000
+      GRAPHITE_API_CONFIG: /graphite-config/graphite-api.yml
+    ports:
+      - '8080:8000'
+    volumes_from:
+      - carbon
+    depends_on:
+      - carbon
+  # Grafana
+  # Metrics dashboard
   grafana:
     image: grafana:v1
     build:
@@ -30,6 +53,4 @@ services:
     ports:
       - '3000:3000'
     depends_on:
-      - carbon
-      - brubeck
-
+      - graphite-api
