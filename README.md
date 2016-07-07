@@ -26,7 +26,7 @@ Grafana 3 is also included.
 
 ### Included images
 | Component | Version |  |
-|---+---+---|
+|---|---|---|
 | [go-carbon](https://github.com/lomik/go-carbon/tree/v0.7.2) | `v0.7.2` | Drop-in replacement for original `carbon` daemon, written in `Go` |
 | [Brubeck](https://github.com/github/brubeck/tree/5d139a4) | `5d139a4` | Easy replacement for `StatsD`, written in `C` |
 | [Graphite API](https://github.com/brutasse/graphite-api) | `latest` | Piece of original `web` component with less features |
