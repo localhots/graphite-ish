@@ -1,22 +1,36 @@
 # Graphite-ish
 
-Original [Graphite](http://graphiteapp.org/) stack is written in Python and it
-could really use some improvements performance-wise. Luckily it is possible to
-replace original stack with other components that have
-[better](https://github.com/lomik/go-carbon/tree/v0.7.2#performance) performance.
-Quite [impressive](https://github.com/github/brubeck/tree/5d139a4#faq).
+Graphite project consists of three components that designed to work together:
 
-Reading metrics from Whisper and performing all the transformations on them is
-done by [Graphite API](https://github.com/brutasse/graphite-api), a Python app.
+* `carbon` daemon that accepts and stores metrics
+* `whisper` database where metrics are kept
+* `web` app that reads metrics and processes them using a comprehensive list of
+supported functions
+
+Every component exposes several APIs that are used by other components. All of
+them are written in Python.
+
+Two more components are often used together with Graphite:
+
+* [StatsD](https://github.com/etsy/statsd) — a Node.js app that accepts metrics
+and aggregates them before submitting to `carbon`;
+* [Grafana](https://github.com/grafana/grafana) — web dashboard for Graphite (and
+other backends)
+
+This set of images replaces original `carbon` daemon and `StatsD` aggregation
+daemon with other compatible components to improve
+[performance](https://github.com/lomik/go-carbon/tree/v0.7.2#performance) and
+[throughput](https://github.com/github/brubeck/tree/5d139a4#faq).
 
 Grafana 3 is also included.
 
-**Included software:**
-
-* [go-carbon](https://github.com/lomik/go-carbon/tree/v0.7.2) `v0.7.2`
-* [Brubeck](https://github.com/github/brubeck/tree/5d139a4) `5d139a4`
-* [Graphite API](https://github.com/brutasse/graphite-api) `latest`
-* [Grafana](https://github.com/grafana/grafana/tree/v3.1.0-beta1) `v3.1.0-beta1`
+### Included images
+| Component | Version |  |
+|---+---+---|
+| [go-carbon](https://github.com/lomik/go-carbon/tree/v0.7.2) | `v0.7.2` | Drop-in replacement for original `carbon` daemon, written in `Go` |
+| [Brubeck](https://github.com/github/brubeck/tree/5d139a4) | `5d139a4` | Easy replacement for `StatsD`, written in `C` |
+| [Graphite API](https://github.com/brutasse/graphite-api) | `latest` | Piece of original `web` component with less features |
+| [Grafana](https://github.com/grafana/grafana/tree/v3.1.0-beta1) | `v3.1.0-beta1` | Web dashboard |
 
 ## Building
 
