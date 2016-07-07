@@ -5,7 +5,8 @@ LABEL version="0.7.2"
 LABEL github="https://github.com/lomik/go-carbon"
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get install -y make git golang
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y make git golang
 
 RUN mkdir /build
 RUN cd /build && git clone https://github.com/lomik/go-carbon.git

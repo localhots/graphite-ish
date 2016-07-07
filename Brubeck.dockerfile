@@ -4,12 +4,8 @@ LABEL app="brubeck"
 LABEL github="https://github.com/github/brubeck"
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update
-RUN apt-get install -y libjansson-dev
-RUN apt-get install -y libssl-dev
-RUN apt-get install -y libmicrohttpd-dev
-RUN apt-get install -y git
-RUN apt-get install -y make
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y make git libjansson-dev libssl-dev libmicrohttpd-dev
 
 RUN mkdir /build
 RUN cd /build && git clone https://github.com/github/brubeck.git
