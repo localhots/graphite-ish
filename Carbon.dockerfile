@@ -15,6 +15,5 @@ RUN make submodules && make
 
 COPY configs/carbon.toml /etc/carbon.toml
 COPY configs/storage-schemas.conf /etc/storage-schemas.conf
-RUN mkdir -p /data/graphite/whisper
 EXPOSE 2003 2004 7002
 ENTRYPOINT ./go-carbon -config=/etc/carbon.toml
