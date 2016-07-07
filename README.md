@@ -20,6 +20,9 @@ Grafana 3 is also included.
 
 **Local installation:**
 
+Make sure [Docker](https://www.docker.com/products/docker) and
+[Docker Compose](https://www.docker.com/products/docker-compose) are installed.
+
 ```
 make graphite fast
 ```
