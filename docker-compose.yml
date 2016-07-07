@@ -1,0 +1,35 @@
+version: '2'
+services:
+  carbon:
+    image: carbon:v1
+    build:
+      dockerfile: Carbon.dockerfile
+      context: .
+    ports:
+      - '2003'
+      - '2004'
+      - '7002'
+    volumes:
+      - /data/graphite/whisper
+  brubeck:
+    image: brubeck:v1
+    build:
+      dockerfile: Brubeck.dockerfile
+      context: .
+    ports:
+      - '8080'
+      - '8126'
+      - '9126'
+    depends_on:
+      - carbon
+  grafana:
+    image: grafana:v1
+    build:
+      dockerfile: Grafana.dockerfile
+      context: .
+    ports:
+      - '3000'
+    depends_on:
+      - carbon
+      - brubeck
+
