@@ -20,10 +20,10 @@ graphite:
 
 	@echo "Building Grafana"
 	docker build -t localhots/grafana:v1 -f Grafana.dockerfile .
-	@echo "Starting Brubeck"
+	@echo "Starting Grafana"
 	docker run -d --name grafana --link carbon:carbon --link brubeck:brubeck \
 		-p 3000:3000 \
-		localhots/brubeck:v1
+		localhots/grafana:v1
 
 fast:
 	@echo "Graphite is fast now!"
