@@ -47,7 +47,7 @@ enabled = false
 max-message-size = 67108864
 
 [carbonlink]
-listen = "127.0.0.1:7002"
+listen = ":7002"
 enabled = true
 # Close inactive connections after "read-timeout"
 read-timeout = "30s"
