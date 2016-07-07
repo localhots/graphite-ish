@@ -18,17 +18,23 @@ Grafana 3 is also included.
 * [Graphite API](https://github.com/brutasse/graphite-api) `latest`
 * [Grafana](https://github.com/grafana/grafana/tree/v3.1.0-beta1) `v3.1.0-beta1`
 
-**Local installation:**
+## Building
 
 Make sure [Docker](https://www.docker.com/products/docker) and
 [Docker Compose](https://www.docker.com/products/docker-compose) are installed.
 
 ```
-make graphite fast
+$ make graphite fast
 ```
 
-**Re-installation:**
+### Re-building
 
 ```
-make graphite fast again
+$ make graphite fast again
+```
+
+## Starting
+
+```
+$ make run
 ```

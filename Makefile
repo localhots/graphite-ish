@@ -1,7 +1,10 @@
 graphite:
-	docker-compose build .
+	docker-compose build
 
 fast:
 	@echo "Graphite is fast now!"
 
 again:
+
+run:
+	docker-compose up
