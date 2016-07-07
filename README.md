@@ -1,12 +1,11 @@
 # Graphite-ish
 
-Original Graphite stack is written in Python and it's speed could have been
-better. Luckily it is possible to replace original stack with other components
-that have [better](https://github.com/lomik/go-carbon/tree/v0.7.2#performance)
+Original [Graphite](http://graphiteapp.org/) stack is written in Python and it's
+speed could have been better. Luckily it is possible to replace original stack
+with other components that have [better](https://github.com/lomik/go-carbon/tree/v0.7.2#performance)
 performance. Quite [impressive](https://github.com/github/brubeck/tree/5d139a4#faq).
 
 Grafana 3 is also included.
-
 
 **Included software:**
 
