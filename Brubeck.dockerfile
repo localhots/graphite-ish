@@ -14,5 +14,5 @@ RUN git checkout 5d139a44206813640151cf0af17d32ee9ac41a60
 RUN ./script/bootstrap
 
 COPY configs/brubeck.json /etc/brubeck.json
-EXPOSE 8080 8126 9126
+EXPOSE 8090 8126 9126
 ENTRYPOINT ./brubeck --config=/etc/brubeck.json
