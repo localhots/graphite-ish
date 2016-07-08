@@ -37,19 +37,19 @@ Grafana 3 is also included.
 Make sure [Docker](https://www.docker.com/products/docker) and
 [Docker Compose](https://www.docker.com/products/docker-compose) are installed.
 
-```
+```bash
 $ make graphite fast
 ```
 
 ### Re-building
 
-```
+```bash
 $ make graphite fast again
 ```
 
 ## Starting
 
-```
+```bash
 $ make run
 ```
 
@@ -63,6 +63,10 @@ $ make run
 
 You can send metrics right from terminal:
 
-```
-$ for i in {1..1000}; do echo "foo.bar:1|C" | nc -v -4u -w1 `docker-machine ip` 8126; done
+```bash
+# 1000 times
+# Send "foo.bar:1|C"
+# Verbose, Using UDP, Timeout 1s
+# To StatsD port on Docker
+$ for i in {1..1000}; do echo "foo.bar:1|C" | nc -v -u -w1 `docker-machine ip` 8126; done
 ```
