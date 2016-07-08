@@ -65,7 +65,7 @@ You can send metrics right from terminal:
 
 ```bash
 # 1000 times
-# Send "test.ping:1|C"
+# Send "test.ping:1|C\n"
 # Verbose, Using UDP, Timeout 1s
 # To StatsD port on Docker
 $ for i in {1..1000}; do echo "test.ping:1|C" | nc -v -u -w1 `docker-machine ip` 8126; done
