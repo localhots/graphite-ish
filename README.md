@@ -8,11 +8,11 @@
 supported functions
 
 Every component exposes several APIs that are used by other components. All of
-them are written in `Python`.
+them are written in Python.
 
 Two more components are often used together with `Graphite`:
 
-* [StatsD](https://github.com/etsy/statsd) — a `Node.js` app that accepts metrics
+* [StatsD](https://github.com/etsy/statsd) — a Node.js app that accepts metrics
 and aggregates them before submitting to `carbon`;
 * [Grafana](https://github.com/grafana/grafana) — web dashboard for `Graphite` (and
 other backends)
@@ -27,10 +27,10 @@ Grafana 3 is also included.
 ### Included images
 | Component | Version |   |
 |-----------|---------|---|
-| [go-carbon](https://github.com/lomik/go-carbon/tree/v0.7.2) | `v0.7.2` | Drop-in replacement for original `carbon` daemon, written in `Go` |
-| [Brubeck](https://github.com/github/brubeck/tree/5d139a4) | `5d139a4` | Easy replacement for `StatsD`, written in `C` |
-| [Graphite API](https://github.com/brutasse/graphite-api) | `latest` | Piece of original `web` component with less features |
-| [Grafana](https://github.com/grafana/grafana/tree/v3.1.0-beta1) | `v3.1.0-beta1` | Web dashboard |
+| [go-carbon](https://github.com/lomik/go-carbon/tree/v0.7.2) | `v0.7.2` | Drop-in replacement for original `carbon` daemon, written in Go |
+| [Brubeck](https://github.com/github/brubeck/tree/5d139a4) | `5d139a4` | Easy replacement for `StatsD`, written in C |
+| [Graphite API](https://github.com/brutasse/graphite-api) | `latest` | A piece of original `Graphite Web` component with less features |
+| [Grafana](https://github.com/grafana/grafana/tree/v3.1.0-beta1) | `v3.1.0-beta1` | Beautiful dashboard for all of that |
 
 ## Building
 
@@ -55,11 +55,11 @@ $ make run
 
 ## Using
 
-* Open Grafana dashboard at `http://[docker-host]:3000/`, sign in as `admin`/`admin`
+* Open `Grafana` dashboard at `http://[docker-host]:3000/`, sign in as `admin`/`admin`
 * Create new data source of type `Graphite` that points to `http://graphite-api:8000`
 * Create a new chart with a test metric (`test.ping` in this example)
 * Start sending metrics to `StatsD`-compatible endpoint
-* Metrics should show up on Grafana dashboard
+* Metrics should show up on `Grafana` dashboard
 
 You can send metrics right from terminal:
 
