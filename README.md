@@ -1,6 +1,6 @@
 # Graphite-ish
 
-Graphite project consists of three components that designed to work together:
+[Graphite](http://graphiteapp.org/) project consists of three components that designed to work together:
 
 * `carbon` daemon that accepts and stores metrics
 * `whisper` database where metrics are kept
@@ -8,13 +8,13 @@ Graphite project consists of three components that designed to work together:
 supported functions
 
 Every component exposes several APIs that are used by other components. All of
-them are written in Python.
+them are written in `Python`.
 
-Two more components are often used together with Graphite:
+Two more components are often used together with `Graphite`:
 
-* [StatsD](https://github.com/etsy/statsd) — a Node.js app that accepts metrics
+* [StatsD](https://github.com/etsy/statsd) — a `Node.js` app that accepts metrics
 and aggregates them before submitting to `carbon`;
-* [Grafana](https://github.com/grafana/grafana) — web dashboard for Graphite (and
+* [Grafana](https://github.com/grafana/grafana) — web dashboard for `Graphite` (and
 other backends)
 
 This set of images replaces original `carbon` daemon and `StatsD` aggregation
@@ -25,8 +25,8 @@ daemon with other compatible components to improve
 Grafana 3 is also included.
 
 ### Included images
-| Component | Version |  |
-|---|---|---|
+| Component | Version |   |
+|-----------|---------|---|
 | [go-carbon](https://github.com/lomik/go-carbon/tree/v0.7.2) | `v0.7.2` | Drop-in replacement for original `carbon` daemon, written in `Go` |
 | [Brubeck](https://github.com/github/brubeck/tree/5d139a4) | `5d139a4` | Easy replacement for `StatsD`, written in `C` |
 | [Graphite API](https://github.com/brutasse/graphite-api) | `latest` | Piece of original `web` component with less features |
