@@ -17,6 +17,8 @@ and aggregates them before submitting to `carbon`;
 * [Grafana](https://github.com/grafana/grafana) — web dashboard for `Graphite` (and
 other backends)
 
+### So what?
+
 This set of images replaces original `carbon` daemon and `StatsD` aggregation
 daemon with other compatible components to improve
 [performance](https://github.com/lomik/go-carbon/tree/v0.7.2#performance) and
