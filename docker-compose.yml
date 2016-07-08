@@ -8,8 +8,8 @@ services:
       dockerfile: Carbon.dockerfile
       context: .
     ports:
-      - '2003:2003'
-      - '2004:2004'
+      - '2003:2003/udp'
+      - '2004:2004/udp'
       - '7002:7002'
     volumes:
       - /data/graphite/whisper
@@ -23,8 +23,8 @@ services:
       context: .
     ports:
       - '8090:8090'
-      - '8126:8126'
-      - '9126:9126'
+      - '8126:8126/udp'
+      - '9126:9126/udp'
     depends_on:
       - carbon
   # Graphite API (yep, almost original Graphite Web)
