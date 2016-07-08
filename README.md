@@ -64,5 +64,5 @@ $ make run
 You can send metrics right from terminal:
 
 ```
-echo "foo.bar:1|C" | nc -4u -w1 `docker-machine ip` 8126
+$ for i in {1..1000}; do echo "foo.bar:1|C" | nc -v -4u -w1 `docker-machine ip` 8126; done
 ```
