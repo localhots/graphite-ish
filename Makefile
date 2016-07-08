@@ -6,5 +6,7 @@ fast:
 
 again:
 
+build: graphite
+
 run:
 	docker-compose up
