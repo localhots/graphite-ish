@@ -52,3 +52,17 @@ $ make graphite fast again
 ```
 $ make run
 ```
+
+## Using
+
+* Open Grafana dashboard at `http://[docker-host]:3000/`, sign in as `admin`/`admin`
+* Create new data source of type `Graphite` that points to `http://graphite-api:8000`
+* Create a new chart with a test metric (`foo.bar` in this example)
+* Start sending metrics to `StatsD`-compatible endpoint
+* Metrics should show up on Grafana dashboard
+
+You can send metrics right from terminal:
+
+```
+echo "foo.bar:1|C" | nc -4u -w1 `docker-machine ip` 8126
+```
