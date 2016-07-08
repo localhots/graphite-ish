@@ -57,7 +57,7 @@ $ make run
 
 * Open Grafana dashboard at `http://[docker-host]:3000/`, sign in as `admin`/`admin`
 * Create new data source of type `Graphite` that points to `http://graphite-api:8000`
-* Create a new chart with a test metric (`foo.bar` in this example)
+* Create a new chart with a test metric (`test.ping` in this example)
 * Start sending metrics to `StatsD`-compatible endpoint
 * Metrics should show up on Grafana dashboard
 
@@ -65,8 +65,8 @@ You can send metrics right from terminal:
 
 ```bash
 # 1000 times
-# Send "foo.bar:1|C"
+# Send "test.ping:1|C"
 # Verbose, Using UDP, Timeout 1s
 # To StatsD port on Docker
-$ for i in {1..1000}; do echo "foo.bar:1|C" | nc -v -u -w1 `docker-machine ip` 8126; done
+$ for i in {1..1000}; do echo "test.ping:1|C" | nc -v -u -w1 `docker-machine ip` 8126; done
 ```
