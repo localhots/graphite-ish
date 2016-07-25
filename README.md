@@ -72,3 +72,5 @@ You can send metrics right from terminal:
 # To StatsD port on Docker
 $ for i in {1..1000}; do echo "test.ping:1|C" | nc -v -u -w1 `docker-machine ip` 8126; done
 ```
+
+Data is kept in `/data/graphite/whisper` directory on the host machine.
