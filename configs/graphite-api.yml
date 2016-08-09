@@ -14,4 +14,6 @@ carbon:
   retry_delay: 15
   carbon_prefix: carbon
   replication_factor: 1
+allowed_origins:
+  - '*' # Allow CORS
 time_zone: UTC
