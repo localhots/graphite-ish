@@ -1,4 +1,4 @@
-search_index: /srv/graphite/index
+search_index: /data/graphite/index
 finders:
   - graphite_api.finders.whisper.WhisperFinder
 functions:
