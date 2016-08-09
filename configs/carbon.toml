@@ -8,7 +8,7 @@ graph-prefix = "carbon.agents.{host}."
 # Interval of storing internal metrics. Like CARBON_METRIC_INTERVAL
 metric-interval = "1m0s"
 # Increase for configuration with multi persisters
-max-cpu = 1
+max-cpu = 2
 
 [whisper]
 data-dir = "/data/graphite/whisper/"
@@ -17,7 +17,7 @@ schemas-file = "/etc/storage-schemas.conf"
 # http://graphite.readthedocs.org/en/latest/config-carbon.html#storage-aggregation-conf. Optional
 aggregation-file = ""
 # Workers count. Metrics sharded by "crc32(metricName) % workers"
-workers = 1
+workers = 2
 # Limits the number of whisper update_many() calls per second. 0 - no limit
 max-updates-per-second = 0
 # Sparse file creation
